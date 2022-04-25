@@ -1,0 +1,24 @@
+{
+    "display": {
+      "icon": {
+        "item": "minecraft:diamond_block",
+        "nbt": "{Enchantments:[{}]}"
+      },
+      "title": "Welcome to the world of Datapacks",
+      "description": "Enter your first world with a datapack",
+      "frame": "goal",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": true,
+      "background": "minecraft:textures/block/ancient_debris_side.png"
+    },
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:impossible"
+      }
+    },
+    "rewards": {
+      "experience": 50
+    }
+  }
+  

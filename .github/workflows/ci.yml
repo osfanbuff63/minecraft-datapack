@@ -1,0 +1,59 @@
+# This is a CI (continuous integration) workflow for Minecraft datapacks.
+# The purpose of CI is to try to catch bugs before they make it into a release.
+# If you are using Visual Studio Code, I suggest using SpyglassMC's language tools to do a similar thing. https://github.com/SpyglassMC/vscode-datapack
+# You can check out the indvidual actions on their respective GitHub pages.
+# For those who have used GitHub Actions before, notice how there is an extra complile and upload step.
+# This is due to how the build-main job checks for errors. Instead of using a script,
+# such as, /gradlew build, with this being a datapack, it checks the source files instead. (see Check commands and Check JSON.)
+# This is completely intentional, please do not create a PR changing it!
+
+name: CI
+on:
+  # Allows the workflow to be triggered by pushing to master or updating a PR toward master, or manually triggered
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  build-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      # Checks mcfunction files for errors
+      - name: Check commands
+        uses: mcbeet/check-commands@v1.0.6
+        with:
+          source: .
+          minecraft: 1.18
+      # Checks JSON for errors
+      - name: Check JSON
+        uses: ocular-d/json-linter@0.0.2
+      # Uploads an artifact that you can download and use in your Minecraft world
+      - name: Compile and upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: your-datapack v1.zip
+          path: |
+               data/*
+               pack.mcmeta
+               pack.png
+          if-no-files-found: error
+  build-packsquash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Run PackSquash
+        uses: ComunidadAylas/PackSquash-action@master
+        with:
+          path: ./
+          token: ${{ secrets.GITHUB_TOKEN }}
+          minify_json_files: true
+          validate_pack_metadata_file: true
+          allow_optifine_mod: true
+          delete_bloat_json_keys: true
+  
