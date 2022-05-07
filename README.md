@@ -13,6 +13,10 @@ This also includes:
 
 Licensed under the [CC0-1.0 license](LICENSE.md). Feel free to do anything you want, pretty much :D.
 
+## Credit
+
+Thanks to @M3FF1N for the `pack.png`!
+
 ## Information on files in the root directory
 
 ### pack.mcmeta and pack.png

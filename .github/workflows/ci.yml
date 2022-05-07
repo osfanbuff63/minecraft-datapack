@@ -19,6 +19,7 @@ jobs:
   build-main:
     runs-on: ubuntu-latest
     steps:
+      # Clones repository so it has access to the files
       - name: Checkout repo
         uses: actions/checkout@v3
       # Checks mcfunction files for errors
@@ -39,6 +40,7 @@ jobs:
                data/*
                pack.mcmeta
                pack.png
+       # Errors if files aren't found
           if-no-files-found: error
   build-packsquash:
     runs-on: ubuntu-latest
