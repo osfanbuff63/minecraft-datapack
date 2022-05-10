@@ -37,7 +37,7 @@ The `pack_format` key is what tells Minecraft what version of Minecraft your pac
 | 1.17 - 1.17.1     | 7             |
 | 1.18 - 1.18.1     | 8             |
 | 1.18.2            | 9             |
-| 1.19>            | 10            |
+| 1.19+             | 10            |
 
 Sample `pack.mcmeta` (you can also see in the example datapack [here](pack.mcmeta)):
 
