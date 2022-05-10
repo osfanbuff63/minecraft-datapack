@@ -25,7 +25,7 @@ These are two files that determine, in part, your datapack's apperance in the Mi
 
 #### pack.mcmeta
 
-The `pack.mcmeta` file is what tells Minecraft what version of Minecraft your pack is made for, and users of what it is about. It is written in JSON, so be careful! First, let's start with `pack_format`. This file is required, otherwise your datapack will not load.
+The `pack.mcmeta` file is what tells Minecraft what version of Minecraft your pack is made for, and users of what it is about. It is written in JSON, so be careful!  This file is required, otherwise your datapack will not load. First, let's start with `pack_format`:
 
 The `pack_format` key is what tells Minecraft what version of Minecraft your pack is made for. In most cases, datapacks will work in a version greater than the version it was made for, but not always the other way around. Here's a handy table:
 
