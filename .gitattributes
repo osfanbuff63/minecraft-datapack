@@ -1,0 +1,4 @@
+# To take care of the whole CRLF vs LF thing, this will automatically normalize line endings for text files to LF.
+# Binary files will be left alone. For more info, read https://www.aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git/
+
+* text=auto
