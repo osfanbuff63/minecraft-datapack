@@ -9,11 +9,9 @@
 
 name: CI
 on:
-  # Allows the workflow to be triggered by pushing to master or updating a PR toward master, or manually triggered
+  # Allows the workflow to be triggered by pushing or updating a PR, or manually triggered
   push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
   workflow_dispatch:
 jobs:
   build-main:
