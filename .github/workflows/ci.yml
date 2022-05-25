@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
       # Checks mcfunction files for errors
       - name: Check commands
-        uses: mcbeet/check-commands@v1.0.6
+        uses: mcbeet/check-commands@v1
         with:
           source: .
           minecraft: 1.18
@@ -50,7 +50,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run PackSquash
-        uses: ComunidadAylas/PackSquash-action@master
+        uses: ComunidadAylas/PackSquash-action@v3
         with:
           path: ./
           token: ${{ secrets.GITHUB_TOKEN }}
