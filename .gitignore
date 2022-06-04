@@ -1,0 +1,66 @@
+# Created by https://gitignore.io
+
+# Created by git for backups
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt
+
+# Notepad++ backups
+*.bak
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Built VS Code extensions
+*.vsix
+
+# Ignore all local history of files
+.history
+.ionide
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+# Binary files
+*.zip
+*.jar
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.exe
+
+# Spyglass stuff
+spyglass.json
+
+# Temporary files
+*.tmp
