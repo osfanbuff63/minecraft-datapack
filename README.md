@@ -4,6 +4,8 @@
 
 A template for a Minecraft datapack on GitHub! This is meant for new players to the datapack community, who don't know much about how datapacks work, or the dos and don'ts of datapacks. Check out the data folder to learn more!
 
+It's worth noting that this is *not* the vanilla datapack of Minecraft (as publishing that would violate the Minecraft EULA), but rather a template for a custom one.
+
 This also includes:
 
 - A GitHub Actions CI workflow for Minecraft datapacks
