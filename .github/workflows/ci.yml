@@ -1,6 +1,6 @@
 # This is a CI (continuous integration) workflow for Minecraft datapacks.
 # The purpose of CI is to try to catch bugs before they make it into a release.
-# If you are using Visual Studio Code, I suggest using SpyglassMC's language tools to do a similar thing. https://github.com/SpyglassMC/vscode-datapack
+# If you are using Visual Studio Code, I suggest using SpyglassMC's language tools to do a similar thing. https://github.com/SpyglassMC/Spyglass
 # You can check out the indvidual actions on their respective GitHub pages.
 # For those who have used GitHub Actions before, notice how there is an extra complile and upload step.
 # This is due to how the build-main job checks for errors. Instead of using a script,
@@ -16,6 +16,8 @@ on:
 jobs:
   build-main:
     runs-on: ubuntu-latest
+    # Only run on PRs if the source branch is on someone else's repo\
+    if: ${{ github.event_name != 'pull_request' || github.repository != github.event.pull_request.head.repo.full_name }}  
     steps:
       # Clones repository so it has access to the files
       - name: Checkout repo
@@ -25,7 +27,7 @@ jobs:
         uses: mcbeet/check-commands@v1
         with:
           source: .
-          minecraft: 1.18
+          minecraft: 1.19
       # Checks JSON for errors
       - name: Check JSON
         uses: ocular-d/json-linter@0.0.2
@@ -33,9 +35,9 @@ jobs:
       - name: Compile and upload
         uses: actions/upload-artifact@v3
         with:
-          name: your-datapack v1.zip
+          name: your-datapack v1
           path: |
-               data/*
+               data/
                pack.mcmeta
                pack.png
        # Errors if files aren't found
@@ -56,4 +58,5 @@ jobs:
           validate_pack_metadata_file: true
           allow_optifine_mod: true
           delete_bloat_json_keys: true
+          artifact_name: '[UNZIP ME] your-datapack v1'
   
