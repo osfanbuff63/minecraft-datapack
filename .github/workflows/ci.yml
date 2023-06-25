@@ -50,13 +50,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run PackSquash
-        uses: ComunidadAylas/PackSquash-action@v3
+        uses: ComunidadAylas/PackSquash-action@v4
         with:
-          path: ./
-          token: ${{ secrets.GITHUB_TOKEN }}
-          minify_json_files: true
-          validate_pack_metadata_file: true
-          allow_optifine_mod: true
-          delete_bloat_json_keys: true
           artifact_name: '[UNZIP ME] your-datapack v1'
-  
+          packsquash_version: latest
+          options: |
+            pack_directory = '.'
+            allow_mods = ['OptiFine']

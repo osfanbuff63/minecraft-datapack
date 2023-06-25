@@ -32,14 +32,16 @@ The `pack.mcmeta` file is what tells Minecraft what version of Minecraft your pa
 The `pack_format` key is what tells Minecraft what version of Minecraft your pack is made for. In most cases, datapacks will work in a version greater than the version it was made for, but not always the other way around. Here's a handy table:
 
 | Minecraft version | `pack_format` |
-| ----------------- | ------------- |
+|-------------------|---------------|
 | 1.13 - 1.14.4     | 4             |
 | 1.15 - 1.16.1     | 5             |
 | 1.16.2 - 1.16.5   | 6             |
 | 1.17 - 1.17.1     | 7             |
 | 1.18 - 1.18.1     | 8             |
 | 1.18.2            | 9             |
-| 1.19+             | 10            |
+| 1.19 - 1.19.3     | 10            |
+| 1.19.4            | 12            |
+| 1.20.0+           | 15            |
 
 Sample `pack.mcmeta` (you can also see in the example datapack [here](pack.mcmeta)):
 
