@@ -21,7 +21,7 @@ jobs:
     steps:
       # Clones repository so it has access to the files
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       # Checks mcfunction files for errors
       - name: Check commands
         uses: mcbeet/check-commands@v1
@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Run PackSquash
