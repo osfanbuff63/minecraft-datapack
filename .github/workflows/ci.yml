@@ -33,7 +33,7 @@ jobs:
         uses: ocular-d/json-linter@0.0.2
       # Uploads an artifact that you can download and use in your Minecraft world
       - name: Compile and upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: your-datapack v1
           path: |
