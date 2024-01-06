@@ -16,7 +16,7 @@ on:
 jobs:
   build-main:
     runs-on: ubuntu-latest
-    # Only run on PRs if the source branch is on someone else's repo\
+    # Only run on PRs if the source branch is on someone else's repository
     if: ${{ github.event_name != 'pull_request' || github.repository != github.event.pull_request.head.repo.full_name }}  
     steps:
       # Clones repository so it has access to the files
@@ -27,7 +27,7 @@ jobs:
         uses: mcbeet/check-commands@v1
         with:
           source: .
-          minecraft: 1.20
+          minecraft: "1.20"
       # Checks JSON for errors
       - name: Check JSON
         uses: ocular-d/json-linter@0.0.2
